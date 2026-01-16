@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --lcars-orange: #FF9900;
+  --lcars-tan: #FFCC99;
+  --lcars-blue: #9999FF;
+  --lcars-purple: #CC99CC;
+  --lcars-red: #CC6666;
+  --lcars-yellow: #FFCC00;
+}
+
+body {
+  font-family: 'Antonio', sans-serif;
+  background-color: #0a0a0a;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* LCARS-inspired styling */
+.lcars-border {
+  border-left: 8px solid var(--lcars-orange);
+  border-radius: 0 0 0 24px;
+}
+
+.lcars-header {
+  background: linear-gradient(90deg, var(--lcars-orange) 0%, var(--lcars-tan) 100%);
+  border-radius: 0 24px 24px 0;
+}
+
+.lcars-button {
+  background-color: var(--lcars-orange);
+  color: #000;
+  padding: 0.5rem 1.5rem;
+  border-radius: 24px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.lcars-button:hover {
+  background-color: var(--lcars-yellow);
+  transform: scale(1.02);
+}
+
+.lcars-button-secondary {
+  background-color: var(--lcars-blue);
+}
+
+.lcars-button-secondary:hover {
+  background-color: var(--lcars-purple);
+}
+
+.lcars-panel {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
+
+.lcars-input {
+  background-color: #1a1a1a;
+  border: 2px solid var(--lcars-orange);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  width: 100%;
+}
+
+.lcars-input:focus {
+  outline: none;
+  border-color: var(--lcars-yellow);
+  box-shadow: 0 0 10px rgba(255, 153, 0, 0.3);
+}
+
+.lcars-textarea {
+  background-color: #1a1a1a;
+  border: 2px solid var(--lcars-orange);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  width: 100%;
+  min-height: 150px;
+  resize: vertical;
+}
+
+.lcars-textarea:focus {
+  outline: none;
+  border-color: var(--lcars-yellow);
+}
+
+/* Status badges */
+.status-pending {
+  background-color: #666;
+  color: #fff;
+}
+
+.status-draft {
+  background-color: var(--lcars-blue);
+  color: #000;
+}
+
+.status-submitted {
+  background-color: var(--lcars-yellow);
+  color: #000;
+}
+
+.status-approved {
+  background-color: #33cc33;
+  color: #000;
+}
+
+/* Progress bar */
+.progress-bar {
+  background-color: #333;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, var(--lcars-orange), var(--lcars-yellow));
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+/* Wiki preview */
+.wiki-preview {
+  background-color: #fff;
+  color: #000;
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.wiki-preview h1, .wiki-preview h2, .wiki-preview h3 {
+  border-bottom: 1px solid #a2a9b1;
+  padding-bottom: 0.25em;
+  margin-top: 1em;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--lcars-orange);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--lcars-yellow);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+/* Loading spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #333;
+  border-top-color: var(--lcars-orange);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
